@@ -5,7 +5,9 @@ var SongQueue = Songs.extend({
     _.bindAll(this, 'enqueue', 'dequeue');
   },
 
-  enqueue: function(data){},
+  enqueue: function(song){
+    this.add(song);
+  },
 
   dequeue: function(){}
 
