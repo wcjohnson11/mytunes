@@ -1,6 +1,10 @@
 // data.js - Defines an array of data regarding song files and their accompanying details.
 var songData = [
   {
+    url: "http://cloud-vibe.com/audio/217064697/222480319/HNNY_-_Mys_Original_Mix_(cloud-vibe.com).mp3",
+    title: "HNNY",
+    artist: "MYS",
+  },{
     url: "https://s3-us-west-1.amazonaws.com/hr-mytunes/data/04+One+In+A+Million.mp3",
     title: "One In A Million",
     artist: "Aaliyah",

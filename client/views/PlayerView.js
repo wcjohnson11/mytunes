@@ -8,7 +8,7 @@ var PlayerView = Backbone.View.extend({
   initialize: function() {
     this.$el.on('ended', function() {
       // Remove the song that ended from the queue
-
+      console.log(song.model);
 
       // If there is another song on the queue, play that song....
     });
