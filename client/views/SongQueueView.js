@@ -6,6 +6,14 @@ var SongQueueView = Backbone.View.extend({
 
   initialize: function() {
     this.render();
+    //when song is added, re-render
+    this.collection.on('addSong', function() {
+      this.render();
+    }, this);
+    //when song is removed re-render
+    this.collection.on('remove', function (){
+      this.render();
+    },this);
   },
 
   render: function() {
@@ -20,13 +28,6 @@ var SongQueueView = Backbone.View.extend({
 
   addSong: function(song){
     this.collection.add(song);
-
-    // If this is the only song in the queue, set it as currentSong
-    // if (this.collection.length === 1) {
-    //   this.set('currentSong', song);
-    // }
-
-
     this.render();
   },
 
@@ -35,8 +36,6 @@ var SongQueueView = Backbone.View.extend({
     if (this.collection.length === 1){
       this.collection.autoPlay();
     }
-    //else
-
   }
 
 });

@@ -6,12 +6,19 @@ var PlayerView = Backbone.View.extend({
   el: '<audio controls autoplay />',
 
   initialize: function() {
-    this.$el.on('ended', function() {
-      // Remove the song that ended from the queue
-      console.log(song.model);
+    // this.$el.on('ended', function() {
+    //   // Remove the song that ended from the queue
+    //   console.log(song.model);
 
-      // If there is another song on the queue, play that song....
-    });
+    //   // If there is another song on the queue, play that song....
+    // });
+  },
+//Changed the ended listener to an event, access to the songModel
+////on 'ended' call the songModel method .ended()
+  events: {
+    'ended':function(){
+      this.model.ended();
+    }
   },
 
   setSong: function(song){
